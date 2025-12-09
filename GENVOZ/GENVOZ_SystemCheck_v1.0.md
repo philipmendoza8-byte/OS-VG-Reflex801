@@ -1,135 +1,108 @@
-# GENVOZ SystemCheck v1.0  
-(Engine Mount + Wiring Harness – Stability Mode)
+GENVOZ SystemCheck v1.0
 
-> ไฟล์นี้มีหน้าที่เหมือน “ช่างเช็กเครื่อง” หลังติดตั้ง GENVOZ core v1.0 แล้ว  
-> ใช้ยืนยันว่าทั้งโครง + สายไฟ + เอกสารทุกชิ้น อยู่ครบและทำงานใน ecosystem Reflex801 ได้จริง
+(Engine Mount + Wiring Harness – โหมดเสถียรภาพ)
 
----
+เอกสารนี้คือ ใบตรวจรับงานติดตั้ง GENVOZ core module v1.0
+ใช้ยืนยันว่าทั้ง 8 ไฟล์หลักของโมดูล GENVOZ อยู่ครบ ถูกที่ ถูกชื่อ และพร้อมถูกเรียกใช้ร่วมกับ Reflex801 / VoiceGold / Deck สำหรับ VC หรือ Lab ใด ๆ
 
-## 0. Metadata
+ถ้าไฟล์นี้อยู่ครบ + ตารางด้านล่างติ๊ก “ครบ” ทุกแถว
+ถือว่า โมดูล GENVOZ ติดตั้งสำเร็จในระดับ Engine Mount + ชุดสายไฟ
 
-- **โมดูล:** GENVOZ v1.0  
-- **โฟลเดอร์หลัก:** `GENVOZ/`  
-- **ไฟล์ชุด core:** 8 ไฟล์ (Concept → SampleCase)  
-- **สถานะชุดนี้:** ✅ ติดตั้งแล้วที่สาขา `main`  
-- **ไฟล์ระบบนี้:** `GENVOZ_SystemCheck_v1.0.md`  
-- **วันที่ออกแบบชุดตรวจ:** 2025-12-09  
+0. ข้อมูลเมตา
 
----
+ชื่อไฟล์: GENVOZ_SystemCheck_v1.0.md
 
-## 1. Installation Snapshot (File Presence Check)
+แพ็กเกจ: GENVOZ/
 
-เช็กลิสต์ด้านล่าง = ตรวจว่า “เครื่องในห้องเครื่อง” อยู่ครบทุกชิ้น
+เวอร์ชันโมดูล: GENVOZ core module v1.0 (8 files)
 
-| # | Expected file name | Path ใน repo | Status |
-|---|--------------------|-------------|--------|
-| 1 | `GENVOZ_Concept_Overview_TH_EN.md` | `GENVOZ/` | ⬜ |
-| 2 | `GENVOZ_FieldCase_Template.md` | `GENVOZ/` | ⬜ |
-| 3 | `GENVOZ_LayerSchema_v1.0.md` | `GENVOZ/` | ⬜ |
-| 4 | `GENVOZ_MasterIndex.md` | `GENVOZ/` | ⬜ |
-| 5 | `GENVOZ_MasterPrompt_v1.0.md` | `GENVOZ/` | ⬜ |
-| 6 | `GENVOZ_NotebookLM_SystemJSON.json` | `GENVOZ/` | ⬜ |
-| 7 | `GENVOZ_QA_Bridge_TH.md` | `GENVOZ/` | ⬜ |
-| 8 | `GENVOZ_SampleCase_ThaiRamanStreet.md` | `GENVOZ/` | ⬜ |
+จำนวนไฟล์ที่ต้องมีครบ: 8 ไฟล์หลัก
 
-**วิธีใช้:**  
-- ทุกครั้งที่ clone / pull repo นี้ไปสาขาใหม่ ให้เปิดไฟล์นี้ แล้วติ๊ก `⬜ → ✅` ด้วยมือตัวเอง  
-- ถ้ามีไฟล์ไหนหาย ให้ **หยุด** ใช้งาน GENVOZ บนสาขานั้นก่อน แล้ว sync จากแหล่งที่ถือว่าเป็น “เครื่องแม่”
+สภาพชุด: main (โหมดใช้งานจริง)
 
----
+อัปเดตล่าสุด: 2025-12-09
 
-## 2. Wiring Harness Check (Logical Consistency)
+หน้าที่:
 
-เช็คว่า “สายไฟเชื่อมถึงกัน” ระหว่างแต่ละไฟล์
+ทำหน้าที่เป็น “แผงฟิวส์ + ใบเช็คระบบ” ของโมดูล GENVOZ
 
-1. **MasterIndex → ไฟล์อื่น**
-   - เปิด `GENVOZ_MasterIndex.md`  
-   - ตรวจว่าใน MasterIndex มีการอ้างถึงทั้ง 7 ไฟล์อื่นของ GENVOZ ครบ (Concept, Template, Schema, Prompt, JSON, QA, SampleCase)  
-   - ถ้าขาดไฟล์ไหน ให้กลับมาแก้ MasterIndex ให้สอดคล้องกับโครงจริงทันที
+ใช้ตรวจว่าไฟล์ทุกชิ้นอยู่ครบ, เส้นทางถูกต้อง, ไม่สะกดชื่อผิด
 
-2. **LayerSchema ↔ Concept / Prompt**
-   - เปิด `GENVOZ_LayerSchema_v1.0.md`  
-   - ตรวจชื่อเลเยอร์กับคำอธิบายใน `GENVOZ_Concept_Overview_TH_EN.md` และ `GENVOZ_MasterPrompt_v1.0.md`  
-   - ชื่อเลเยอร์ / ภารกิจแต่ละเลเยอร์ควรสะท้อนกัน (คนอ่านไม่งงว่าชั้นไหนทำอะไร)
+ใช้เป็นหลักฐานแนบเวลาแชร์ repo หรือส่งให้ VC / Labs / เพื่อนร่วมทีม
 
-3. **NotebookLM JSON ↔ เอกสาร**
-   - เปิด `GENVOZ_NotebookLM_SystemJSON.json`  
-   - ตรวจว่าใน JSON อ้างอิงไฟล์ชุด GENVOZ ถูกต้อง (ถ้ามี path หรือชื่อไฟล์)  
-   - ถ้าโยงผิด ให้ถือว่า “สายสัญญาณขาด” ต้องแก้ JSON ก่อนใช้งานจริง
+1. ภาพรวมการติดตั้ง (การตรวจสอบการมีอยู่ของไฟล์)
 
----
+ให้ใช้ตารางนี้เช็กทีละแถวว่ามีไฟล์จริงใน repo หรือไม่
+ถ้าพบว่าตรง ให้ติ๊ก ✅ ในคอลัมน์ “สถานะ”
 
-## 3. Human-Level Sanity Test (Quick NLM Check)
+โฟลเดอร์อ้างอิงหลักใน repo: GENVOZ/
 
-ทดสอบแบบ “ควันแรกจากท่อไอเสีย” ว่าโมดูลตอบสนองได้ตามที่ตั้งใจ
+ลำดับ	ชื่อไฟล์หลักสุดท้าย	เส้นทางใน repo (คาดหวัง)	สถานะ
+1	GENVOZ_Concept_Overview_TH_EN.md	GENVOZ/GENVOZ_Concept_Overview_TH_EN.md	✅ ติดตั้งแล้ว
+2	GENVOZ_FieldCase_Template.md	GENVOZ/GENVOZ_FieldCase_Template.md	✅ ติดตั้งแล้ว
+3	GENVOZ_LayerSchema_v1.0.md	GENVOZ/GENVOZ_LayerSchema_v1.0.md	✅ ติดตั้งแล้ว
+4	GENVOZ_MasterIndex.md	GENVOZ/GENVOZ_MasterIndex.md	✅ ติดตั้งแล้ว
+5	GENVOZ_MasterPrompt_v1.0.md	GENVOZ/GENVOZ_MasterPrompt_v1.0.md	✅ ติดตั้งแล้ว
+6	GENVOZ_NotebookLM_SystemJSON.json	GENVOZ/GENVOZ_NotebookLM_SystemJSON.json	✅ ติดตั้งแล้ว
+7	GENVOZ_QA_Bridge_TH.md	GENVOZ/GENVOZ_QA_Bridge_TH.md	✅ ติดตั้งแล้ว
+8	GENVOZ_SampleCase_ThaiRamanStreet.md	GENVOZ/GENVOZ_SampleCase_ThaiRamanStreet.md	✅ ติดตั้งแล้ว
 
-ให้เลือก NLM ใดก็ได้ที่ลุงใช้เป็นหลัก แล้วรัน 3 เทสนี้:
+ถ้าบรรทัดไหนหาไฟล์ไม่เจอ ให้เปลี่ยนสถานะเป็น ❌ และเพิ่มหมายเหตุใต้ตารางว่าขาดไฟล์ใด / ต้องรีสโตร์จากที่ไหน
 
-### Test A — Concept Integrity
+2. เช็กลิสต์สั้น ๆ ก่อนส่งต่อ (Sanity Check)
 
-**Prompt ตัวอย่าง**  
+เช็กลิสต์นี้เอาไว้ก่อนแชร์ repo หรือก่อนแนบเข้า Deck / ส่งให้ VC
 
-> “อ่านไฟล์ `GENVOZ/GENVOZ_Concept_Overview_TH_EN.md` แล้วสรุปให้ 5 bullet (TH) ว่า  
-> GENVOZ คืออะไร และทำหน้าที่อะไรในระบบ Reflex801 / VoiceGold”
+ อยู่บน branch main
 
-**ผ่านเมื่อ**  
-- AI อธิบายว่า GENVOZ คือ *Economic Voice Analysis Layer* หรือความหมายใกล้เคียง  
-- มีการพูดถึงว่า GENVOZ ทำงาน “บน” Reflex801 / VoiceGold (ไม่ใช่ของคนละจักรวาล)
+ โฟลเดอร์โมดูลใช้ชื่อ GENVOZ/ ตรงตามมาตรฐาน Reflex801
 
----
+ มีไฟล์ GENVOZ/README.md อธิบายสถานะโมดูล และระบุว่าติดตั้ง GENVOZ v1.0 แล้ว
 
-### Test B — Layer & Prompt Cohesion
+ ไฟล์ core ทั้ง 8 ชิ้น อยู่ภายใต้โฟลเดอร์ GENVOZ/ ไม่กระจายไปที่อื่น
 
-**Prompt ตัวอย่าง**  
+ ไม่มีไฟล์สะกดชื่อผิด เช่น GENVOZz, GENVOICE, ฯลฯ
 
-> “อ่านไฟล์ `GENVOZ/GENVOZ_LayerSchema_v1.0.md` และ  
-> `GENVOZ/GENVOZ_MasterPrompt_v1.0.md` แล้วอธิบาย flow การวิเคราะห์เสียงเศรษฐกิจ  
-> เป็น 4–6 ขั้นตอน (TH)”
+ ไม่มีไฟล์ version เก่าชื่อคล้ายกันค้างอยู่ในโฟลเดอร์เดียวกัน (เช่น _v0.9, _backup)
 
-**ผ่านเมื่อ**  
-- คำตอบมีการไล่ลำดับ step ตั้งแต่รับเสียง → ตัดเฟรม → ตีความ → สร้างเลเยอร์ meaning  
-- ไม่มีอาการตอบกว้างเกินไปแบบ generic NLP ทั่วไป (ต้องมีคำศัพท์/โครง GENVOZ ปรากฏ)
+ เดือน/ปีในหัวเอกสาร ตรงกับไทม์ไลน์จริงของ Reflex801 / VoiceGold
 
----
+3. วิธีใช้ GENVOZ SystemCheck ในชีวิตจริง
 
-### Test C — SampleCase Consistency (Thai Raman Street)
+หลังติดตั้งโมดูล GENVOZ ครบ 8 ไฟล์
 
-**Prompt ตัวอย่าง**  
+เปิดไฟล์ GENVOZ_SystemCheck_v1.0.md บน GitHub
 
-> “อ่านไฟล์ `GENVOZ/GENVOZ_SampleCase_ThaiRamanStreet.md` แล้ว  
-> สรุป insight เศรษฐกิจฐานราก 3–5 ข้อ ที่ GENVOZ น่าจะดึงออกมาจากเคสนี้”
+วิ่งดูตารางในหัวข้อที่ 1 ทีละแถว
 
-**ผ่านเมื่อ**  
-- Insight ที่ได้ผูกกับ *พฤติกรรมซื้อจริง* / *สภาพรายได้* / *ความเสี่ยง* ของร้าน/คนในเคส  
-- ไม่ใช่แค่สรุปเนื้อเรื่อง แต่สะท้อนโทนเศรษฐกิจแบบที่ Reflex801 สนใจ
+ถ้าครบทุกแถว
 
----
+เว้นโน้ตสั้น ๆ ใต้ตาราง เช่น “ตรวจแล้วครบ ณ วันที่ … โดย …”
 
-## 4. Version / Branch Policy (Minimal)
+ถือเป็นการ “เซ็นรับงาน” ว่า Engine Mount + Wiring Harness ของ GENVOZ เสร็จเรียบร้อย
 
-เพื่อไม่ให้ GENVOZ กลายเป็น “ของเละใน trunk”:
+ถ้าขาดไฟล์อย่างน้อย 1 แถว
 
-1. **สาขาหลัก:**  
-   - `main` = รับเฉพาะ GENVOZ เวอร์ชันที่ผ่าน SystemCheck ชุดนี้แล้วเท่านั้น
+หาที่มาไฟล์จากสำเนา mac27 / Downloads / GENVOZ core pack หรือจาก commit ก่อนหน้า
 
-2. **งานทดลอง / แก้ prompt / แก้ schema:**  
-   - ให้แตก branch เช่น `feature/genvoz-prompt-tuning` หรือ `exp/genvoz-layer-v1-1`  
-   - เมื่อพร้อมค่อยเปิด PR และแนบผล Test A–C สั้น ๆ ใน description
+กู้ไฟล์กลับเข้าที่โฟลเดอร์ GENVOZ/ ให้ตรงชื่อเดิมทุกตัวอักษร
 
-3. **การเพิ่มไฟล์ใหม่ในโฟลเดอร์ GENVOZ/**  
-   - ทุกครั้งต้องอัปเดต `GENVOZ_MasterIndex.md` + เช็กผลกระทบกับ JSON (ถ้ามี)  
-   - จากนั้นเพิ่ม checklist ใหม่ในไฟล์ SystemCheck ฉบับถัดไป เช่น `v1.1`
+กลับมาติ๊กสถานะในตารางเป็น ✅ เมื่อเช็กซ้ำแล้ว
 
----
+เวลาแชร์ให้ VC / Labs / เพื่อนร่วมทีม
 
-## 5. Field Notes (สำหรับเจ้าของระบบ)
+แค่ชี้ลิงก์มาที่ไฟล์ GENVOZ_SystemCheck_v1.0.md + GENVOZ/README.md
 
-ช่องนี้เผื่อให้ลุงเขียนบันทึกสั้น ๆ เวลาเอา GENVOZ ไปติดตั้งในสภาพแวดล้อมใหม่  
-(ระบุวันที่ / เครื่องไหน / บริบทไหน / note ความเสถียร)
+เขาจะเห็นเลยว่าโมดูลนี้ติดตั้งครบและผ่าน SystemCheck แล้ว
 
-```text
-[ตัวอย่างบันทึก]
+4. หมายเหตุสำหรับอนาคต (เผื่อ v2.0)
 
-2025-12-09 – ติดตั้ง GENVOZ v1.0 บน OS-VG-Reflex801 (main) – ใช้ผ่าน GitHub + NLM Stack เดิม
-- ผล Test A–C: ผ่านทั้งหมด / latency ปกติ / ไม่มี error ด้าน path เอกสาร
-- Observation: QA_Bridge_TH ใช้อธิบาย GENVOZ ได้เคลียร์มาก → ใช้เป็น anchor prompt ได้ดี
+ถ้ามีการเพิ่มไฟล์ core ใหม่ในอนาคต ให้
+
+เพิ่มแถวใหม่ในตารางหัวข้อที่ 1
+
+อัปเดตจำนวนไฟล์ที่ “ต้องมีครบ” ในหัวข้อ 0
+
+เวอร์ชันถัดไป (ถ้ามี) แนะนำให้ตั้งชื่อไฟล์เป็น
+
+GENVOZ_SystemCheck_v2.0.md แล้วเก็บ v1.0 ไว้เป็นประวัติการติดตั้งชุดแรก
