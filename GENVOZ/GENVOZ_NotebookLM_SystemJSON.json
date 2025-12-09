@@ -1,0 +1,64 @@
+{
+  "system_name": "GENVOZ Economic Voice Analysis Layer",
+  "version": "1.0",
+  "description": "GENVOZ is a schema and rule-set that turns real-world voice transcripts from Thai SMEs and similar speakers into structured 4-layer economic meaning frames. It runs on top of the Reflex801 / VoiceGold field OS.",
+  "layers": [
+    {
+      "id": "L1",
+      "name": "Narrative Slice",
+      "purpose": "Capture what is happening in plain terms per short segment.",
+      "fields": [
+        "who",
+        "topic",
+        "what_happened"
+      ]
+    },
+    {
+      "id": "L2",
+      "name": "Emotion & Stress",
+      "purpose": "Describe emotional tone and stress level.",
+      "fields": [
+        "tone",
+        "stress_level",
+        "emotion_keywords",
+        "notes"
+      ]
+    },
+    {
+      "id": "L3",
+      "name": "Economic Context",
+      "purpose": "Make economic structure visible from the story.",
+      "fields": [
+        "income_streams",
+        "cost_drivers",
+        "constraints",
+        "opportunities",
+        "summary"
+      ]
+    },
+    {
+      "id": "L4",
+      "name": "Forward Signal",
+      "purpose": "Offer cautious 1–3 month outlook and pivot points.",
+      "fields": [
+        "short_term_outlook",
+        "time_horizon_months",
+        "risk_factors",
+        "leverage_points",
+        "commentary"
+      ]
+    }
+  ],
+  "segment_schema": {
+    "segment_id": "string",
+    "start_hint": "string",
+    "end_hint": "string",
+    "source_text": "string",
+    "L1_narrative_slice": "object",
+    "L2_emotion_stress": "object",
+    "L3_economic_context": "object",
+    "L4_forward_signal": "object"
+  },
+  "example_query_TH": "ช่วยวิเคราะห์ transcript เสียงของแม่ค้าตลาดสดนี้ตามโครงสร้าง GENVOZ (L1–L4) และให้ผลลัพธ์ในรูปแบบ JSON ตามสคีมาที่กำหนด",
+  "example_query_EN": "Analyze this SME voice transcript using the GENVOZ schema (L1–L4) and return JSON according to the provided segment and layer definitions."
+}
